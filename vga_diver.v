@@ -1,27 +1,30 @@
 module vga_diver(
     input 				vga_clk		,
     input 				rst_n		,
-    input		[15:0]	pixel_data	,
+    input			[15:0]	pixel_data	,
 
     output				vga_hs 		,
     output				vga_vs 		,
-    output		[15:0]	vga_rgb  /* ,
- 	output		[ 9:0]	vga_x		,
-    output		[ 9:0]	vga_y	*/	
+    output			[15:0]	vga_rgb      /* ,
+    
+    output		        [ 9:0]	vga_x		,
+    output		        [ 9:0]	vga_y	     */	
    	 );
-	parameter H_SYNC	=	11'd136	;
-	parameter H_BACK	=	11'd160	;
-	parameter H_DISP	=	11'd1024;
-	parameter H_FRONT	=	11'd24	;
-	parameter H_TOTAL	=	11'd1344;
+	
+	
+	parameter H_SYNC	=	11'd136	;//行显示同步
+	parameter H_BACK	=	11'd160	;//行显示前沿
+	parameter H_DISP	=	11'd1024;//行像素数据
+	parameter H_FRONT	=	11'd24	;//行显示后沿
+	parameter H_TOTAL	=	11'd1344;//行总时钟
 
-	parameter V_SYNC	=	11'd6	;
-	parameter V_BACK	=	11'd29	;
-	parameter V_DISP	=	11'd768 ;
-	parameter V_FRONT	=	11'd3	;
-	parameter V_TOTAL	=	11'd806;
+	parameter V_SYNC	=	11'd6	;//场显示同步
+	parameter V_BACK	=	11'd29	;//场显示前沿
+	parameter V_DISP	=	11'd768 ;//场像素数据
+	parameter V_FRONT	=	11'd3	;//场显示后沿
+	parameter V_TOTAL	=	11'd806 ;//场总时钟
 
-//pclk = H_TOTAL * V_TOTAL * fps
+        //pclk = H_TOTAL * V_TOTAL * fps
 
 
 
